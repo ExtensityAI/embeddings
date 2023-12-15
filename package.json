@@ -1,0 +1,16 @@
+{
+    "version": "0.0.1",
+    "name": "ExtensityAI/embeddings",
+    "description": "This project is based on the Sentence Transformers repo and offers all models for the SymbolicAI project.",
+    "expressions": [
+        {
+            "module": "src/func",
+            "type": "SentenceTransformerEmbeddings"
+        }
+    ],
+    "run": {
+        "module": "src/func",
+        "type": "SentenceTransformerEmbeddings"
+    },
+    "dependencies": []
+}
