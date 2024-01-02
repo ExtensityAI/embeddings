@@ -6,6 +6,10 @@
         {
             "module": "src/func",
             "type": "SentenceTransformerEmbeddings"
+        },
+        {
+            "module": "src/engine",
+            "type": "EmbeddingEngine"
         }
     ],
     "run": {
