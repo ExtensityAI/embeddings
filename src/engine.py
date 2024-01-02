@@ -18,8 +18,8 @@ class EmbeddingEngine(Engine):
         self.config             = SYMAI_CONFIG
         self.model_name         = self.config['EMBEDDING_ENGINE_MODEL'] if model is None else model
         self.model              = SentenceTransformer(self.model_name)
-        self.pricing            = self.api_pricing()
-        self.max_tokens         = self.api_max_tokens()
+        self.max_tokens         = self.model.max_seq_length
+        self.embedding_dim      = self.model.get_sentence_embedding_dimension()
 
     def id(self) -> str:
         if  'mpnet' in self.config['EMBEDDING_ENGINE_MODEL']:
@@ -33,7 +33,7 @@ class EmbeddingEngine(Engine):
             self.model      = SentenceTransformer(self.model_name)
 
     def forward(self, argument):
-        prepared_input = argument.prop.prepared_input
+        prepared_input  = argument.prop.prepared_input
         args            = argument.args
         kwargs          = argument.kwargs
 
