@@ -3,8 +3,8 @@ import logging
 from typing import Optional
 from sentence_transformers import SentenceTransformer
 
-from symai.backend.engine.base import Engine
-from symai.backend.engine.settings import SYMAI_CONFIG
+from symai.backend.base import Engine
+from symai.backend.settings import SYMAI_CONFIG
 
 
 logging.getLogger("sentence_transformers").setLevel(logging.ERROR)
