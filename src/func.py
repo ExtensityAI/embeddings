@@ -11,4 +11,5 @@ class SentenceTransformerEmbeddings(Expression):
         self.model      = SentenceTransformer(model)
 
     def forward(self, sym: Symbol, *args, **kwargs):
-        return self.model.encode(str(sym))
+        value = sym.value if isinstance(sym, Symbol) else sym
+        return self.model.encode(value)
