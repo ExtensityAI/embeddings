@@ -48,7 +48,7 @@ class EmbeddingEngine(Engine):
             callback = self.model.encode
             res = except_remedy(e, input_, callback, self, *args, **kwargs)
 
-        rsp = [res]
+        rsp = res
 
         metadata = {}
         return [rsp], metadata
